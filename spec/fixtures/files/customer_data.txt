@@ -1,0 +1,11 @@
+customer_id,customer_name,customer_lastname,email,token
+100,Marcy,Elephus,Marcy.Elephus@blamail.com,473
+101,Brietta,Emmy,Brietta.Emmy@blamail.com,653
+102,Nanete,Sparhawk,Nanete.Sparhawk@blamail.com,147
+103,Dorice,Lesley,Dorice.Lesley@blamail.com,451
+104,Dulcinea,Matthew,Dulcinea.Matthew@blamail.com,88
+105,Bobbi,Laverne,Bobbi.Laverne@blamail.com,357
+106,Ernesta,Edison,Ernesta.Edison@blamail.com,535
+107,Anica,Faro,Anica.Faro@blamail.com,850
+108,Madalyn,Olin,Madalyn.Olin@blamail.com,533
+

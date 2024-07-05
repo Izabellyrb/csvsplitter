@@ -1,0 +1,30 @@
+<h1> Divisor de arquivos csv </h1>
+<h2 class='subtitle'> Converta seu documento em arquivos csv independentes, com 50 linhas cada. </h2>
+
+<section class='home'>
+  <div class="form-group">
+    <%= form_with url: api_v1_import_path, method: :post do |f| %>
+      <div class= "col-6 col-md-4">
+        <%= f.label ImportData.human_attribute_name(:user_email) %>:
+        <%= f.text_field :email, class:'form-control' %>
+      </div>
+      <hr>
+      <div class='form-group mt-3'>
+        <%= f.file_field :csv_file, class: "search_btn", accept: '.csv' %>
+      </div>
+      <hr>
+      <div class='label'>
+        <%= f.submit 'Dividir csv', class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class='help'>
+    <h2> Como utilizar? </h2>
+    <ul>
+      <li> Informe o endereço de email para o qual os arquivos divididos devem ser enviados. </li>
+      <li> Selecione o arquivo (em formato .csv) que deseja dividir. </li>
+      <li> Clique no botão "Dividir csv" </li>
+    </ul>
+  </div>
+</section>

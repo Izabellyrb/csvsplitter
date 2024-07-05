@@ -1,0 +1,38 @@
+require: rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.2
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - 'bin/**/*'
+    - 'db/schema.rb'
+    - 'db/migrate/**/*'
+    - 'vendor/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/BlockLength:
+  AllowedMethods: ['describe', 'context', 'feature', 'scenario', 'let', 'it']
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Metrics/MethodLength:
+  Exclude:
+    - 'app/models/policy.rb'
+Metrics/ParameterLists:
+  Exclude:
+    - 'app/models/policy.rb'
+Metrics/AbcSize:
+  Exclude:
+    - 'app/models/policy.rb'
+    
