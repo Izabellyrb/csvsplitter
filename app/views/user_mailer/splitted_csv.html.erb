@@ -1,14 +1,18 @@
 <body class="bg-light">
   <div class="container" style='font-family: arial'>
-    <img src="/assets/csvsplitter-logo.png" style="width:20%;height:20%;"/>
+    <%= image_tag attachments['csvsplitter-logo.png'].url, style: "width:200px;" %>
     <h1  style='font-size: 20px'><br>
       Olá, <%= @email %>!
     </h1>
-    <p style='font-size: 18px'>
+    <p style='font-size: 14px'>
       Seu arquivo foi dividido com sucesso. Acesse a pasta em anexo para conferir.
     </p> <br>
-    <p style='font-size: 18px'>
+    <p style='font-size: 14px'>
       Até a próxima!
     </p>
+    <footer style='font-size: 11px'>
+      <p> Este e-mail foi enviado automaticamente, favor não responder. </p>
+    </footer>
+  <!--  Gmail do not support external CSS  -->
   </div>
 </body>

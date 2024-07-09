@@ -77,6 +77,7 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   # mail delivery
+  # to use real mail servers: comment the lines below, copy the content from config/environments/production.rb:80..94 and paste here
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
 end

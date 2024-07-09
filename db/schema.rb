@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_07_05_000649) do
-  create_table "import_data", force: :cascade do |t|
+  create_table "import_data", charset: "utf8mb3", force: :cascade do |t|
     t.string "file_name"
     t.string "user_email"
     t.float "file_size"
