@@ -12,7 +12,7 @@ describe 'csv import' do
 
     post '/api/v1/import', params: { csv_file: uploaded_file, email: user_email }
 
-    expect(json_data['message']).to eq 'Arquivo recebido com sucesso! Aguarde a conversão.'
+    expect(json_data['message']).to eq 'Arquivo recebido com sucesso! Aguarde a conversão no email.'
     expect(response.status).to eq 200
   end
 

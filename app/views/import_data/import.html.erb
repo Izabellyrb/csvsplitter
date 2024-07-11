@@ -5,7 +5,7 @@
 
 <section class='home'>
   <div class="form-group">
-    <%= form_with url: api_v1_import_path, method: :post do |f| %>
+    <%= form_with url: import_path, method: :post do |f| %>
       <div class= "col-6 col-md-4">
         <%= f.label ImportData.human_attribute_name(:user_email) %>:
         <%= f.text_field :email, class:'form-control' %>

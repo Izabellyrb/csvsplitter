@@ -9,8 +9,7 @@ Rails.application.routes.draw do
 
   root to: 'import_data#import'
 
-  # get 'index', to: 'import_data#index'
-  # get 'search', to: 'import_data#search'
+  post 'import', to: 'tasks#import'
 
   namespace :api do
     namespace :v1 do

@@ -1,4 +1,4 @@
-class Api::V1::TasksController < Api::V1::ApiController
+class TasksController < ApplicationController
   include CsvActions
   before_action :set_data, :check_csv, :check_email
 
@@ -6,10 +6,11 @@ class Api::V1::TasksController < Api::V1::ApiController
     if @csv_task.is_complete?
       csv_file_path = csv_upload(params[:csv_file].tempfile.path)
       CsvTaskWorker.perform_async(csv_file_path, @email, imported_data)
-      render json: { message: 'Arquivo recebido com sucesso! Aguarde a conversão no email.' }, status: :ok
+      flash[:notice] = 'Arquivo recebido com sucesso! Aguarde a conversão no email.'
     else
-      render json: { message: 'O arquivo enviado não pode ser dividido, pois o conteúdo está incompleto/vazio.' }, status: :bad_request
+      flash[:alert] = 'O arquivo enviado não pode ser dividido, pois o conteúdo está incompleto/vazio.'
     end
+    redirect_to import_path
   end
 
   private
@@ -27,13 +28,14 @@ class Api::V1::TasksController < Api::V1::ApiController
 
   def check_csv
     unless @csv_file.present? && @csv_file.content_type == 'text/csv'
-      render json: { message: 'Por favor, insira um arquivo no formato csv' }, status: :bad_request
+      flash[:alert] = 'Por favor, insira um arquivo no formato csv'
     end
   end
 
   def check_email
     unless @email.present? && @email =~ URI::MailTo::EMAIL_REGEXP
-      render json: { message: 'Por favor, insira um email válido para envio dos arquivos divididos' }, status: :bad_request
+      flash[:alert] = 'Por favor, insira um email válido para envio dos arquivos divididos'
+      redirect_to import_path
     end
   end
 end

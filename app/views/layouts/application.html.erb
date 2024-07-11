@@ -22,6 +22,16 @@
 
     <!-- Content -->
     <main>
+      <% flash.each do |type, msg| %>
+      <% alert_class = case type.to_sym
+                       when :notice then "alert-success"
+                       when :alert then "alert-danger"
+                       else "alert-info"
+                       end %>
+      <p class="alert <%= alert_class %>">
+      <%= msg %>
+      </p>
+      <% end %>
       <%= yield %>
     </main>
 
