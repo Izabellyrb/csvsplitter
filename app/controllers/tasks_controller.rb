@@ -6,9 +6,9 @@ class TasksController < ApplicationController
     if @csv_task.is_complete?
       csv_file_path = csv_upload(params[:csv_file].tempfile.path)
       CsvTaskWorker.perform_async(csv_file_path, @email, imported_data)
-      flash[:notice] = 'Arquivo recebido com sucesso! Aguarde a conversão no email.'
+      flash[:notice] = 'File received successfully! Please wait for the conversion in the specified email.'
     else
-      flash[:alert] = 'O arquivo enviado não pode ser dividido, pois o conteúdo está incompleto/vazio.'
+      flash[:alert] = 'The uploaded file cannot be split as the content is incomplete/empty.'
     end
     redirect_to import_path
   end
@@ -28,13 +28,13 @@ class TasksController < ApplicationController
 
   def check_csv
     unless @csv_file.present? && @csv_file.content_type == 'text/csv'
-      flash[:alert] = 'Por favor, insira um arquivo no formato csv'
+      flash[:alert] = 'Please insert a file in .csv format'
     end
   end
 
   def check_email
     unless @email.present? && @email =~ URI::MailTo::EMAIL_REGEXP
-      flash[:alert] = 'Por favor, insira um email válido para envio dos arquivos divididos'
+      flash[:alert] = 'Please enter a valid email to send the split files'
       redirect_to import_path
     end
   end

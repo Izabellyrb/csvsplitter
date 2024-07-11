@@ -1,13 +1,22 @@
 <section class='title'>
-  <h1> Divisor de arquivos csv </h1>
-  <h2 class='subtitle'> Converta seu documento em arquivos csv independentes, com 50 linhas cada. </h2>
+  <h1> CSV File Splitter </h1>
+  <h2 class='subtitle'> Convert your document into separate CSV files, with 50 lines each. </h2>
+</section>
+
+<section class='help'>
+  <h2 class='subtitle'> How to use it? </h2>
+  <ul>
+    <li> Enter the email address where the split files should be sent. </li>
+    <li> Select the CSV file you want to split. </li>
+    <li> Click on the "Split CSV" button. </li>
+  </ul>
 </section>
 
 <section class='home'>
   <div class="form-group">
     <%= form_with url: import_path, method: :post do |f| %>
       <div class= "col-6 col-md-4">
-        <%= f.label ImportData.human_attribute_name(:user_email) %>:
+        <%= f.label :user_email %>:
         <%= f.text_field :email, class:'form-control' %>
       </div>
       <hr>
@@ -16,17 +25,8 @@
       </div>
       <hr>
       <div class='label'>
-        <%= f.submit 'Dividir csv', class: "btn btn-primary" %>
+        <%= f.submit 'Split CSV', class: "btn btn-primary" %>
       </div>
     <% end %>
-  </div>
-  
-  <div class='help'>
-    <h2> Como utilizar? </h2>
-    <ul>
-      <li> Informe o endereço de email para o qual os arquivos divididos devem ser enviados. </li>
-      <li> Selecione o arquivo (em formato .csv) que deseja dividir. </li>
-      <li> Clique no botão "Dividir csv" </li>
-    </ul>
   </div>
 </section>

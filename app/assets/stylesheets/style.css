@@ -6,7 +6,6 @@
   padding: 0;
 }
 
-
 body {
   display: flex;
   flex-direction: column;
@@ -17,12 +16,12 @@ body {
 header {
 display: flex;
 justify-content: center;
-height: 90px;
+height: 85px;
 background: #ebd5f1;
 }
 
 main {
-  padding: 2% 10%;
+  padding: 1% 10%;
 }
 
 /* Home - Upload */
@@ -50,7 +49,7 @@ main {
 }
 
 .form-group {
-  padding: 1% 0;
+  margin: 1% 0;
   display: flex;
   flex-direction: column;
 }

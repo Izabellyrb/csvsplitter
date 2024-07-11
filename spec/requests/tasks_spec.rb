@@ -12,7 +12,7 @@ describe 'csv import' do
 
     post '/api/v1/import', params: { csv_file: uploaded_file, email: user_email }
 
-    expect(json_data['message']).to eq 'Arquivo recebido com sucesso! Aguarde a conversão no email.'
+    expect(json_data['message']).to eq 'File received successfully! Please wait for the conversion in the specified email.'
     expect(response.status).to eq 200
   end
 
@@ -20,7 +20,7 @@ describe 'csv import' do
 
     post '/api/v1/import', params: { csv_file: nil, email: user_email }
 
-    expect(json_data['message']).to eq 'Por favor, insira um arquivo no formato csv'
+    expect(json_data['message']).to eq 'Please insert a file in .csv format'
     expect(response.status).to eq 400
   end
 
@@ -29,7 +29,7 @@ describe 'csv import' do
 
     post '/api/v1/import', params: { csv_file: uploaded_file, email: user_email }
 
-    expect(json_data['message']).to eq 'Por favor, insira um arquivo no formato csv'
+    expect(json_data['message']).to eq 'Please insert a file in .csv format'
     expect(response.status).to eq 400
   end
 
@@ -38,7 +38,7 @@ describe 'csv import' do
 
     post '/api/v1/import', params: { csv_file: uploaded_file, email: user_email }
 
-    expect(json_data['message']).to eq 'O arquivo enviado não pode ser dividido, pois o conteúdo está incompleto/vazio.'
+    expect(json_data['message']).to eq 'The uploaded file cannot be split as the content is incomplete/empty.'
     expect(response.status).to eq 400
   end
 
@@ -47,7 +47,7 @@ describe 'csv import' do
 
     post '/api/v1/import', params: { csv_file: uploaded_file, email: nil}
 
-    expect(json_data['message']).to eq 'Por favor, insira um email válido para envio dos arquivos divididos'
+    expect(json_data['message']).to eq 'Please enter a valid email to send the split files'
     expect(response.status).to eq 400
   end
 end

@@ -19,9 +19,9 @@ RSpec.describe ImportData, type: :model do
         )
 
         import_data.valid?
-        expect(import_data.errors.full_messages[0]).to eq 'Tamanho do arquivo (bytes) deve ser maior que 0'
-        expect(import_data.errors.full_messages[1]).to eq 'Tamanho do arquivo (linhas) deve ser maior que 0'
-        expect(import_data.errors.full_messages[2]).to eq 'Total de arquivos gerados deve ser maior que 0'
+        expect(import_data.errors.full_messages[0]).to eq 'File size must be greater than 0'
+        expect(import_data.errors.full_messages[1]).to eq 'Rows must be greater than 0'
+        expect(import_data.errors.full_messages[2]).to eq 'Splits must be greater than 0'
       end
     end
 
@@ -34,7 +34,7 @@ RSpec.describe ImportData, type: :model do
         import_data.valid?
 
         expect(import_data.errors.messages.keys).to include :user_email
-        expect(import_data.errors.messages[:user_email]).to eq ['não é válido']
+        expect(import_data.errors.messages[:user_email]).to eq ['is invalid']
       end
     end
   end
