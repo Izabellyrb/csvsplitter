@@ -8,7 +8,7 @@ gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
-gem "mysql2", "~> 0.5"
+gem 'mysql2', '~> 0.5'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
@@ -26,9 +26,9 @@ gem 'stimulus-rails'
 gem 'jbuilder'
 
 gem 'actionmailer'
-gem 'rubyzip'
 gem 'redis'
-gem "sidekiq", "~> 7.3"
+gem 'rubyzip'
+gem 'sidekiq', '~> 7.3'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -52,18 +52,18 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'byebug', '~> 11.1'
   gem 'debug', platforms: %i[mri windows]
-  gem 'rspec-rails', '~> 6.1'
-  gem 'pry-remote', '~> 0.1.8'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'pry-remote', '~> 0.1.8'
+  gem 'rspec-rails', '~> 6.1'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'letter_opener_web', '~> 3.0'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'web-console'
-  gem 'letter_opener_web', '~> 3.0'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -75,7 +75,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara', '~> 3.40'
+  gem 'rspec-sidekiq'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
-  gem 'rspec-sidekiq'
 end

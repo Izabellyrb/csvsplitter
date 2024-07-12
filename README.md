@@ -23,7 +23,7 @@ Set the key `email` and enter any email address. <br>
 Go to http://localhost:3000/letter_opener/ and check if the email has arrived. <br>
 When you click **Send**, the following message should appear:
 ```sh
-File received successfully! Please wait for the conversion in the specified email.
+File received successfully! Please check your email in a few minutes.
 ```
 <br>
 

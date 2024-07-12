@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe UserMailer, type: :mailer do
   include ActionDispatch::TestProcess::FixtureFile
@@ -10,6 +10,6 @@ RSpec.describe UserMailer, type: :mailer do
 
     expect(mail.subject).to eq 'Here is your split file!'
     expect(mail.to).to include 'teste@gmail.com'
-    expect(mail.attachments).to include {filename = "split_files.zip"}
+    expect(mail.attachments).to(include { filename = 'split_files.zip' })
   end
 end

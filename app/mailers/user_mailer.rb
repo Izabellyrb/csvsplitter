@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
     attachments['split_files.zip'] = file
 
     attachments.inline['csvsplitter-logo.png'] = {
-      data: File.read(Rails.root.join('app', 'assets', 'images', 'csvsplitter-logo.png')),
+      data: File.read(Rails.root.join('app/assets/images/csvsplitter-logo.png')),
       mime_type: 'image/png'
     }
 

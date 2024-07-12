@@ -8,7 +8,10 @@ RSpec.describe CsvTaskWorker, type: :worker do
   let(:file_path) { file_fixture('customer_data_100.csv') }
   let(:email) { 'example@email.com' }
   let(:worker) { double('worker_methods') }
-  let(:imported_data) { {"file_name"=>"customer_data_100.csv", "user_email"=>"example@email.com", "file_size"=>5005, "rows"=>100, "splits"=>2, "status"=> "false" } }
+  let(:imported_data) do
+    { 'file_name' => 'customer_data_100.csv', 'user_email' => 'example@email.com', 'file_size' => 5005, 'rows' => 100,
+      'splits' => 2, 'status' => 'false' }
+  end
 
   it 'enqueues a job' do
     described_class.perform_async(file_path, email, imported_data)

@@ -4,7 +4,7 @@ RSpec.describe ImportData, type: :model do
   describe '#valid' do
     context 'presence' do
       it 'not valid when attributes are empty' do
-        import_data = ImportData.new()
+        import_data = ImportData.new
 
         import_data.valid?
 

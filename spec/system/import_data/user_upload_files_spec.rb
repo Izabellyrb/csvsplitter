@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe 'User uploads a csv file' do
   it 'successfully' do
-
     visit root_path
     fill_in :email, with: 'example@test.com'
     attach_file :csv_file, Rails.root.join('spec/fixtures/files/customer_data_100.csv')

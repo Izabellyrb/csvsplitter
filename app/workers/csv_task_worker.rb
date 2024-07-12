@@ -11,6 +11,6 @@ class CsvTaskWorker
 
     ImportDataService.change_status(email)
 
-    FileUtils.rm_rf(Rails.root.join('public/download'))
+    FileUtils.rm_rf(Rails.public_path.join('download'))
   end
 end
